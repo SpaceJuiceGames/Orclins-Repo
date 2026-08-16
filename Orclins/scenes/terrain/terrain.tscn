@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ucw4bm8e8ky"]
+
+[ext_resource type="Texture2D" uid="uid://bwf7myphd6u2s" path="res://art/backgroud_tileset.jpg" id="1_uqx3c"]
+[ext_resource type="Script" uid="uid://dvv6o7h56r224" path="res://scenes/terrain/tm_background.gd" id="2_ine53"]
+[ext_resource type="Texture2D" uid="uid://c58a5juryihp" path="res://art/tileset.png" id="2_uqx3c"]
+[ext_resource type="Script" uid="uid://dfju2dnnpwqbr" path="res://scenes/terrain/tm_terrain.gd" id="3_ine53"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xab6x"]
+texture = ExtResource("1_uqx3c")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ddnet"]
+sources/1 = SubResource("TileSetAtlasSource_xab6x")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h3ybg"]
+texture = ExtResource("2_uqx3c")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w738f"]
+sources/0 = SubResource("TileSetAtlasSource_h3ybg")
+
+[node name="Terrain" type="Node2D" unique_id=1315535873]
+
+[node name="TM-Background" type="TileMapLayer" parent="." unique_id=920173054]
+tile_set = SubResource("TileSet_ddnet")
+script = ExtResource("2_ine53")
+
+[node name="TM-Machines" type="TileMapLayer" parent="." unique_id=306668172]
+
+[node name="TM-Terrain" type="TileMapLayer" parent="." unique_id=1818429946]
+tile_set = SubResource("TileSet_w738f")
+script = ExtResource("3_ine53")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=390630106]
+position = Vector2(0, 1)
