@@ -60,6 +60,3 @@ script = ExtResource("2_ine53")
 [node name="TM-Terrain" type="TileMapLayer" parent="." unique_id=1818429946]
 tile_set = SubResource("TileSet_w738f")
 script = ExtResource("3_ine53")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=390630106]
-position = Vector2(0, 1)
