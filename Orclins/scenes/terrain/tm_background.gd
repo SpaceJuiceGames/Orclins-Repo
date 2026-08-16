@@ -12,7 +12,6 @@ func _ready() -> void:
 	var map_coords:= Vector2i(map_x,map_y)
 	var randx: int = randi_range(0,3)
 	var randy: int = randi_range(1,3)
-	print(map_coords)
 	
 	while map_x < 200:
 		while map_y > -200:
