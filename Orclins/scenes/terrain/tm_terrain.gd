@@ -45,7 +45,6 @@ func _ready() -> void:
 				map_x = map_x +1
 				map_coords= Vector2i(map_x,map_y)
 			elif rng_num >=76  and map_y > 30:
-				print(map_y)
 				atlas_coords = Vector2i(3,1) #copper
 				tm_terrain.set_cell(map_coords,atlas_id,atlas_coords)
 				map_x = map_x +1
