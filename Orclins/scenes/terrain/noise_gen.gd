@@ -15,16 +15,15 @@ func _process(delta: float) -> void:
 
 func generate_noise():
 	noise = FastNoiseLite.new()
-	noise.seed = randi_range(0,10)
-	noise.fractal_gain = 0.15
-	print(noise.seed)
+	noise.seed = randf_range(0,10000)
+	noise.fractal_gain = 0.2
 	noise.noise_type = FastNoiseLite.TYPE_PERLIN
 	var num: int = 0
-	
-	for x in range(100):
-		for y in range(100):
+	for x in range(1000):
+		for y in range(150):
+			var noise_value: float = (noise.get_noise_2d(x,y)* 100)
+			noise_value = noise_value * ((149-y))
 			var position = Vector2i(x,y)
-			var noise_value: float = (noise.get_noise_2d(x,y)*100)
 			generate_rect(position,noise_value)
 			num = num + 1
 
@@ -32,7 +31,7 @@ func generate_rect(pos, noise_val):
 	var block = ColorRect.new()
 	block.position = pos
 	block.size = Vector2i(2,2)
-	if pos.y >= 50:
+	if pos.y >= 75:
 		if noise_val >= 7:
 			block.color = Color(0.0, 0.0, 0.0, 1.0)
 		elif noise_val >= 3:
