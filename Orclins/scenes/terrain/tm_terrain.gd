@@ -1,15 +1,16 @@
 extends TileMapLayer
 
 @onready var tm_terrain: TileMapLayer = $"."
+@onready var terrain: Node2D = $".."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var atlas_id:int = 0
 	var atlas_coords:= Vector2i(1,0)
-	var map_x:int = -200
+	var map_x:int = -(terrain.chunk_dimensions.x)
 	var map_y:int = 0
 	var map_coords:= Vector2i(map_x,map_y)
-	while map_x < 200:
+	while map_x < terrain.chunk_dimensions.x:
 		atlas_coords= Vector2i(1,0) #grass block
 		tm_terrain.set_cell(map_coords,atlas_id,atlas_coords)
 		map_x = map_x +1
@@ -19,7 +20,7 @@ func _ready() -> void:
 	
 	atlas_coords= Vector2i(0,0) #dirt block
 	while map_y < 4:
-		while map_x < 200:
+		while map_x < terrain.chunk_dimensions.x:
 			tm_terrain.set_cell(map_coords,atlas_id,atlas_coords)
 			map_x = map_x +1
 			map_coords= Vector2i(map_x,map_y)
@@ -32,7 +33,7 @@ func _ready() -> void:
 	var rng_num: int = randi_range(0,9)
 	atlas_coords= Vector2i(2,0) #stone block
 	while map_y < 200:
-		while map_x <200:
+		while map_x < terrain.chunk_dimensions.x:
 			rng_num = randi_range(-100,99)
 			if rng_num >= 40 and rng_num <= 60 and map_y > 10:
 				atlas_coords = Vector2i(3,0) #coal
