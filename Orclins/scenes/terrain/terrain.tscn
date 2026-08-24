@@ -180,18 +180,23 @@ sources/1 = SubResource("TileSetAtlasSource_igvj6")
 script = ExtResource("1_x03iu")
 
 [node name="TM-Background" type="TileMapLayer" parent="." unique_id=920173054]
+visible = false
 tile_set = SubResource("TileSet_ddnet")
 script = ExtResource("2_ine53")
 emptiness = 0.9
 
 [node name="TM-Machines" type="TileMapLayer" parent="." unique_id=306668172]
+visible = false
 
 [node name="TM-Terrain" type="TileMapLayer" parent="." unique_id=1818429946]
+visible = false
 tile_set = SubResource("TileSet_w738f")
 script = ExtResource("3_ine53")
 
 [node name="TM-Foreground" type="TileMapLayer" parent="." unique_id=158557465]
+visible = false
 tile_set = SubResource("TileSet_h3ybg")
 
 [node name="NoiseGen" type="Node2D" parent="." unique_id=1459685803]
 script = ExtResource("1_64blg")
+noise_debug = true
