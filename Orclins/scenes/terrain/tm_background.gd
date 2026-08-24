@@ -16,9 +16,7 @@ func display_map() -> void:
 
 	
 	while terrain.map_x < terrain.chunk_dimensions.x:
-		print(terrain.map_x," : ",terrain.map_y)
 		while terrain.map_y > terrain.chunk_dimensions.y:
-			print(terrain.map_x," : ",terrain.map_y)
 			var rng:float = randf()
 			if rng >= emptiness:
 				randx= randi_range(0,3)

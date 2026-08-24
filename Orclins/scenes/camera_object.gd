@@ -29,5 +29,5 @@ func camera_move():
 		$Camera2D.zoom.x -= 0.1
 		$Camera2D.zoom.y -= 0.1
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		print(get_local_mouse_position())
+		print(get_global_mouse_position())
 		
